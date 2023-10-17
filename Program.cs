@@ -12,10 +12,9 @@ namespace System
             products.Add(new Product("Notebook", 1200.00));
             products.Add(new Product("Tablet", 450.00));
 
-            // Declaração do Comparison (delegate), recebendo uma função anônima ou lambda...
-            Comparison<Product> comp = (p1, p2) => p1.Name.ToUpper().CompareTo(p2?.Name.ToUpper());
-
-            products.Sort(comp); // passando a referência para o método Sort.
+            //products.Sort((p1, p2) => p1.Name.ToUpper().CompareTo(p2.Name.ToUpper())); // Sort por Name
+            // ou
+            products.Sort((p1, p2) => p1.Price.CompareTo(p2.Price)); // Sort por Price.
 
             foreach (Product product in products)
             {
