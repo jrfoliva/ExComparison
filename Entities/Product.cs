@@ -1,8 +1,7 @@
-﻿using System;
-using System.Globalization;
+﻿using System.Globalization;
 namespace ExComparison.Entities
 {
-    internal class Product : IComparable<Product>
+    internal class Product
     {
         public string Name { get; set; }
         public double Price { get; set; }
@@ -16,12 +15,6 @@ namespace ExComparison.Entities
         public override string ToString()
         {
             return Name + ", " + Price.ToString("F2", CultureInfo.InvariantCulture); 
-        }
-
-        public int CompareTo(Product other)
-        {
-            //return Name.ToUpper().CompareTo(other.Name.ToUpper());
-            return Price.CompareTo(other.Price);
         }
     }
 }
